@@ -131,75 +131,75 @@ let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:va
 " DISABLE: use tlist instead
 " " exvim/ex-tagbar: invoke by <F4>
 " " ---------------------------------------------------
-" Plugin 'exvim/ex-tagbar'
+Plugin 'exvim/ex-tagbar'
 
-" nnoremap <unique> <silent> <F4> :TagbarToggle<CR>
+nnoremap <unique> <silent> <F9> :TagbarToggle<CR>
 
-" let g:tagbar_sort = 0
-" let g:tagbar_map_preview = '<CR>'
-" if has('gui_running')
-"     let g:tagbar_map_close = '<Esc>'
-" else
-"     let g:tagbar_map_close = '<leader><Esc>'
-" endif
-" let g:tagbar_map_zoomwin = '<Space>'
-" let g:tagbar_zoomwidth = 80
-" let g:tagbar_autofocus = 1
-" let g:tagbar_iconchars = ['+', '-']
+let g:tagbar_sort = 0
+let g:tagbar_map_preview = '<CR>'
+if has('gui_running')
+     let g:tagbar_map_close = '<Esc>'
+ else
+     let g:tagbar_map_close = '<leader><Esc>'
+ endif
+ let g:tagbar_map_zoomwin = '<Space>'
+ let g:tagbar_zoomwidth = 80
+ let g:tagbar_autofocus = 1
+ let g:tagbar_iconchars = ['+', '-']
 
 " " use command ':TagbarGetTypeConfig lang' change your settings
-" let g:tagbar_type_javascript = {
-"     \ 'ctagsbin': 'ctags',
-"     \ 'kinds' : [
-"         \ 'v:global variables:0:0',
-"         \ 'c:classes',
-"         \ 'p:properties:0:0',
-"         \ 'm:methods',
-"         \ 'f:functions',
-"         \ 'r:object',
-"     \ ],
-" \ }
-" let g:tagbar_type_c = {
-"     \ 'kinds' : [
-"         \ 'd:macros:0:0',
-"         \ 'p:prototypes:0:0',
-"         \ 'g:enums',
-"         \ 'e:enumerators:0:0',
-"         \ 't:typedefs:0:0',
-"         \ 's:structs',
-"         \ 'u:unions',
-"         \ 'm:members:0:0',
-"         \ 'v:variables:0:0',
-"         \ 'f:functions',
-"     \ ],
-" \ }
-" let g:tagbar_type_cpp = {
-"     \ 'kinds' : [
-"         \ 'd:macros:0:0',
-"         \ 'p:prototypes:0:0',
-"         \ 'g:enums',
-"         \ 'e:enumerators:0:0',
-"         \ 't:typedefs:0:0',
-"         \ 'n:namespaces',
-"         \ 'c:classes',
-"         \ 's:structs',
-"         \ 'u:unions',
-"         \ 'f:functions',
-"         \ 'm:members:0:0',
-"         \ 'v:variables:0:0',
-"     \ ],
-" \ }
+ let g:tagbar_type_javascript = {
+     \ 'ctagsbin': 'ctags',
+     \ 'kinds' : [
+         \ 'v:global variables:0:0',
+         \ 'c:classes',
+         \ 'p:properties:0:0',
+         \ 'm:methods',
+         \ 'f:functions',
+         \ 'r:object',
+     \ ],
+ \ }
+ let g:tagbar_type_c = {
+     \ 'kinds' : [
+         \ 'd:macros:0:0',
+         \ 'p:prototypes:0:0',
+         \ 'g:enums',
+         \ 'e:enumerators:0:0',
+         \ 't:typedefs:0:0',
+         \ 's:structs',
+         \ 'u:unions',
+         \ 'm:members:0:0',
+         \ 'v:variables:0:0',
+         \ 'f:functions',
+     \ ],
+ \ }
+let g:tagbar_type_cpp = {
+     \ 'kinds' : [
+         \ 'd:macros:0:0',
+         \ 'p:prototypes:0:0',
+         \ 'g:enums',
+         \ 'e:enumerators:0:0',
+         \ 't:typedefs:0:0',
+         \ 'n:namespaces',
+         \ 'c:classes',
+         \ 's:structs',
+         \ 'u:unions',
+         \ 'f:functions',
+         \ 'm:members:0:0',
+         \ 'v:variables:0:0',
+     \ ],
+ \ }
 
 " DISABLE: minibufexpl makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
 "          to enable it
 " ex-minibufexpl
 " ---------------------------------------------------
-" Plugin 'exvim/ex-minibufexpl'
-" let g:miniBufExplBuffersNeeded = 0
-" let g:miniBufExplUseSingleClick = 1 " If you would like to single click on tabs rather than double clicking on them to goto the selected buffer.
-" let g:miniBufExplMaxSize = 1 " <max lines: default 0> setting this to 0 will mean the window gets as big as needed to fit all your buffers.
-" let g:miniBufExplTabWrap = 1
+Plugin 'exvim/ex-minibufexpl'
+let g:miniBufExplBuffersNeeded = 0
+let g:miniBufExplUseSingleClick = 1 " If you would like to single click on tabs rather than double clicking on them to goto the selected buffer.
+let g:miniBufExplMaxSize = 1 " <max lines: default 0> setting this to 0 will mean the window gets as big as needed to fit all your buffers.
+let g:miniBufExplTabWrap = 1
 " " let g:miniBufExplDebugMode  = 3
 " " let g:miniBufExplDebugLevel = 0
 
@@ -513,6 +513,71 @@ Plugin 'plasticboy/vim-markdown'
 
 let g:vim_markdown_initial_foldlevel=9999
 
+" OmniCppComplete
+" ------------------------------------------------------------------
+Plugin 'vim-scripts/OmniCppComplete'
+
+"  " set Ctrl+j in insert mode, like VS.Net
+  imap <unique> <C-]> <C-X><C-O>
+"  " :inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
+"
+"  " set completeopt as don't show menu and preview
+  set completeopt=menuone
+"
+"  " use global scope search
+  let OmniCpp_GlobalScopeSearch = 1
+"
+"  " 0 = namespaces disabled
+"  " 1 = search namespaces in the current buffer
+"  " 2 = search namespaces in the current buffer and in included files
+  let OmniCpp_NamespaceSearch = 1
+"
+"  " 0 = auto
+"  " 1 = always show all members
+  let OmniCpp_DisplayMode = 1
+"
+"  " 0 = don't show scope in abbreviation
+"  " 1 = show scope in abbreviation and remove the last column
+  let OmniCpp_ShowScopeInAbbr = 0
+"
+"  " This option allows to display the prototype of a function in the
+"  abbreviation part of the popup menu.
+"  " 0 = don't display prototype in abbreviation
+"  " 1 = display prototype in abbreviation
+  let OmniCpp_ShowPrototypeInAbbr = 1
+"
+"  " This option allows to show/hide the access information ('+', '#', '-') in
+"  the popup menu.
+"  " 0 = hide access
+"  " 1 = show access
+  let OmniCpp_ShowAccess = 1
+"
+"  " This option can be use if you don't want to parse using namespace
+"  declarations in included files and want to add namespaces that are always
+"  used in your project.
+  let OmniCpp_DefaultNamespaces = ["std"]
+"
+"  " Complete Behaviour
+  let OmniCpp_MayCompleteDot = 0
+  let OmniCpp_MayCompleteArrow = 0
+  let OmniCpp_MayCompleteScope = 0
+"
+"  " When 'completeopt' does not contain "longest", Vim automatically select
+"  the first entry of the popup menu. You can change this behaviour with the
+"  OmniCpp_SelectFirstItem option.
+  let OmniCpp_SelectFirstItem = 0
+
+" yegappan/grep
+" ------------------------------------------------------------------
+Plugin 'yegappan/grep'
+
+" yegappan/grep
+" ------------------------------------------------------------------
+Plugin 'yegappan/lid'
+
+" Valloric/YouCompleteMe
+" ------------------------------------------------------------------
+Plugin 'Valloric/YouCompleteMe'
 "}}}
 
 " TEST {{{

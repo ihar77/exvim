@@ -294,8 +294,8 @@ function! g:MyDiff()
     silent execute '!' .  'diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
 endfunction
 
-set cindent shiftwidth=2 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
-set tabstop=2 " set tabstop to 4 characters
+set cindent shiftwidth=4 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
+set tabstop=4 " set tabstop to 4 characters
 set expandtab " set expandtab on, the tab will be change to space automaticaly
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
 
@@ -321,8 +321,8 @@ set ignorecase " set search/replace pattern to ignore case
 set smartcase " set smartcase mode on, If there is upper case character in the search patern, the 'ignorecase' option will be override.
 
 " set this to use id-utils for global search
-set grepprg=lid\ -Rgrep\ -s
-set grepformat=%f:%l:%m
+"set grepprg=lid\ -Rgrep\ -s
+"set grepformat=%f:%l:%m
 
 "/////////////////////////////////////////////////////////////////////////////
 " Auto Command
