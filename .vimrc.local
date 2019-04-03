@@ -1,2 +1,58 @@
 " This file will be loaded at the end of .vimrc.
 " This file is designed to add your own vim scripts or override the exVim's .vimrc settings.
+
+au BufNewFile,BufEnter * set cpoptions+=d
+"nnoremap <unique> <Leader>bd :call exUtility#Kwbd(1)
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+map <C-m> :set mouse=<CR>
+map <C-a> :set mouse=a<CR>
+
+
+"set clipboard=unnamed
+
+" Encoding options
+language en_US.UTF-8
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+end
+set encoding=utf8
+"set encoding=unicode
+"set fileencodings-=latin1
+"set fileencodings+=cp1251,koi8-r,koi8-u,cp866,unicode,utf-16,utf-16le,latin1
+set spelllang=en_us
+
+set tabstop=4
+set softtabstop=4
+set et
+set smarttab
+set smartindent
+set colorcolumn=81
+set listchars=tab:»­,trail:·
+set list
+"set shiftwidth=4
+set expandtab
+set errorformat =%E%f:%l:%c:\ %trror:\ %m,%-Z%p^,%+C%.%#,%D%*\\a:\ Entering\ directory\ '%f',%X%*\\a:\ Leaving\ directory\ '%f',%-G%.%#
+set makeprg=./kobuild_standalone_sade.sh\ sade
+"autocmd BufNewFile,BufRead *.cpp *.c set formatprg=astyle\ -T4 \ ‑‑style=kr
+autocmd InsertEnter,InsertLeave * set cul!
+
+colorscheme pablo
+
+" copy only full path name
+nnoremap <unique> <silent> <leader>p1 :call exUtility#Yank( fnamemodify(bufname('+'),":p:h") )<CR>
+" copy only file name
+nnoremap <unique> <silent> <leader>p2 :call exUtility#Yank( fnamemodify(bufname('+'),":p:t") )<CR>
+" copy full path + filename
+nnoremap <unique> <silent> <leader>p3 :call exUtility#Yank( fnamemodify(bufname('+'),":p") )<CR>
+" copy path + filename for code
+nnoremap <unique> <silent> <leader>pb :call exUtility#YankBufferNameForCode()<CR>
+" copy path for code
+nnoremap <unique> <silent> <leader>pp :call exUtility#YankFilePathForCode()<CR>
+
+nnoremap <unique> <silent> <leader>ne :call EXProjectToNERDTree()<CR>
+nnoremap <unique> <silent> <leader>pr :call NERDTreeToEXProject()<CR>
