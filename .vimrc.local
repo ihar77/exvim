@@ -36,7 +36,7 @@ set listchars=tab:»­,trail:·
 set list
 "set shiftwidth=4
 set expandtab
-set errorformat =%E%f:%l:%c:\ %trror:\ %m,%-Z%p^,%+C%.%#,%D%*\\a:\ Entering\ directory\ '%f',%X%*\\a:\ Leaving\ directory\ '%f',%-G%.%#
+set errorformat=%E%f:%l:%c:\ %trror:\ %m,%-Z%p^,%+C%.%#,%D%*\\a:\ Entering\ directory\ '%f',%X%*\\a:\ Leaving\ directory\ '%f',%-G%.%#
 set makeprg=./kobuild_standalone_sade.sh\ sade
 "autocmd BufNewFile,BufRead *.cpp *.c set formatprg=astyle\ -T4 \ ‑‑style=kr
 autocmd InsertEnter,InsertLeave * set cul!
