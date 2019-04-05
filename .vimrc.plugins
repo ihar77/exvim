@@ -37,7 +37,7 @@ Plugin 'exvim/ex-aftercolors'
 
 " ex-vimentry
 " ---------------------------------------------------
-Plugin 'exvim/ex-vimentry'
+Plugin 'ihar77/ex-vimentry'
 
 " ex-project
 " ---------------------------------------------------
@@ -84,7 +84,7 @@ call excscope#register_hotkey( 100, 0, '<leader>cd', ":EXCSToggle<CR>", 'Toggle 
 
 " ex-qfix
 " ---------------------------------------------------
-Plugin 'exvim/ex-qfix'
+Plugin 'ihar77/ex-qfix'
 
 call exqfix#register_hotkey( 100, 0, '<leader>qf', ":EXQFixToggle<CR>", 'Toggle quickfix window.' )
 call exqfix#register_hotkey( 101, 0, '<leader>qq', ":EXQFixPaste<CR>", 'Open quickfix window and paste error list from register *.' )
@@ -587,3 +587,7 @@ Plugin 'Valloric/YouCompleteMe'
 "}}}
 
 " vim:ts=4:sw=4:sts=4 et fdm=marker:
+
+" sjl/badwolf
+" ---------------------------------------------------
+Plugin 'sjl/badwolf'

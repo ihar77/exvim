@@ -30,18 +30,16 @@ set tabstop=4
 set softtabstop=4
 set et
 set smarttab
-set smartindent
+"set smartindent
 set colorcolumn=81
 set listchars=tab:»­,trail:·
 set list
 "set shiftwidth=4
 set expandtab
-set errorformat=%E%f:%l:%c:\ %trror:\ %m,%-Z%p^,%+C%.%#,%D%*\\a:\ Entering\ directory\ '%f',%X%*\\a:\ Leaving\ directory\ '%f',%-G%.%#
-set makeprg=./kobuild_standalone_sade.sh\ sade
 "autocmd BufNewFile,BufRead *.cpp *.c set formatprg=astyle\ -T4 \ ‑‑style=kr
 autocmd InsertEnter,InsertLeave * set cul!
 
-colorscheme pablo
+colorscheme badwolf
 
 " copy only full path name
 nnoremap <unique> <silent> <leader>p1 :call exUtility#Yank( fnamemodify(bufname('+'),":p:h") )<CR>
