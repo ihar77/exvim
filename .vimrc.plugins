@@ -322,6 +322,12 @@ Plugin 'scrooloose/syntastic'
 " this will make html file by Angular.js ignore errors
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
+let g:syntastic_quiet_messages={'level':'warnings'}
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>f :SyntasticToggleMode<CR>
 
 " DISABLE: use ex-autocomplpop instead
 " " neocomplcache: invoke when you insert words
