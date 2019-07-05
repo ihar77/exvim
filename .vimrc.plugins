@@ -591,3 +591,16 @@ Plugin 'Valloric/YouCompleteMe'
 " sjl/badwolf
 " ---------------------------------------------------
 Plugin 'sjl/badwolf'
+
+" rking/ag.vim
+" ---------------------------------------------------
+Plugin 'rking/ag.vim'
+
+" Chun-Yang/vim-action-ag
+" ---------------------------------------------------
+Plugin 'Chun-Yang/vim-action-ag'
+" use * to search current word in normal mode
+nmap * <Plug>AgActionWord
+" use * to search selected text in visual mode
+vmap * <Plug>AgActionVisual
+
