@@ -47,8 +47,8 @@ Plugin 'exvim/ex-project'
 " ---------------------------------------------------
 Plugin 'exvim/ex-gsearch'
 
-call exgsearch#register_hotkey( 100, 0, '<leader>gs', ":EXGSearchToggle<CR>", 'Toggle global search window.' )
-call exgsearch#register_hotkey( 101, 0, '<leader>gg', ":EXGSearchCWord<CR>", 'Search current word.' )
+"call exgsearch#register_hotkey( 100, 0, '<leader>gs', ":EXGSearchToggle<CR>", 'Toggle global search window.' )
+"call exgsearch#register_hotkey( 101, 0, '<leader>gg', ":EXGSearchCWord<CR>", 'Search current word.' )
 call exgsearch#register_hotkey( 102, 0, '<leader><S-f>', ":GS ", 'Shortcut for :GS' )
 
 " ex-tagselect
@@ -583,7 +583,7 @@ Plugin 'yegappan/lid'
 
 " Valloric/YouCompleteMe
 " ------------------------------------------------------------------
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "}}}
 
 " TEST {{{
@@ -613,3 +613,19 @@ Plugin 'dyng/ctrlsf.vim'
 " rking/ag.vim
 " ---------------------------------------------------
 Plugin 'rking/ag.vim'
+
+" pearofducks/ansible-vim
+" ---------------------------------------------------
+Plugin 'pearofducks/ansible-vim'
+
+" Plugin 'dense-analysis/ale'
+" ---------------------------------------------------
+Plugin 'dense-analysis/ale'
+let g:ale_python_flake8_options = '--ignore=E501'
+" Plugin 'dense-analysis/ale'
+" ---------------------------------------------------
+"Plugin 'prabirshrestha/async.vim'
+
+" Plugin 'dense-analysis/ale'
+" ---------------------------------------------------
+"Plugin 'prabirshrestha/vim-lsp'
